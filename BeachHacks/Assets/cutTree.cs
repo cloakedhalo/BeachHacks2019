@@ -8,6 +8,7 @@ public class cutTree : MonoBehaviour
     public Text logText;
     public int counter;
     public static int LogCount;
+    public Text chopText;
 
     private void Update()
     {
@@ -17,6 +18,8 @@ public class cutTree : MonoBehaviour
             Debug.Log("Destroy tree now");
             Destroy(this.gameObject);
             logText.text = "Wood= " + LogCount;
+            chopText.text = "";
+            counter = 0;
         }
     }
     void OnTriggerEnter(Collider other)

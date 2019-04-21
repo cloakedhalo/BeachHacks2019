@@ -7,14 +7,18 @@ public class hungerSystem : MonoBehaviour
 {
     float lastHungerUpdateTime = 0f;
     float currentTime;
-    int hunger = 100;
+    public static int hunger = 100;
     public Text textbox;
+    public Text healthBar;
+    public static int health = 100;
+    private int cocoHunger = 10;
 
     
 
-    private void Start()
+    public void Start()
     {
         textbox.text = "Hunger: " + hunger;
+        healthBar.text = "HEALTH: " + health; 
     }
     void Update()
     {
@@ -24,6 +28,11 @@ public class hungerSystem : MonoBehaviour
         if (currentTime - lastHungerUpdateTime > 6f)
         {
             hunger -= 1;
+            if(health <100)
+            {
+                health++;
+                healthBar.text = "HEALTH: " + health;
+            }
             textbox.text = "Hunger: " + hunger;
             lastHungerUpdateTime = currentTime;
         }
@@ -31,14 +40,18 @@ public class hungerSystem : MonoBehaviour
         if (hunger < 1)
         {
             textbox.text = "Hunger: " + hunger;
-            //die
+            health = 0;
         }
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name =="Coconut")
+        if(collision.gameObject.tag == "food" && hunger < 100)
         {
-            hunger += 10;
+            hunger += cocoHunger;
+            if(hunger > 100)
+            {
+                hunger = 100;
+            }
         }
     }
 }

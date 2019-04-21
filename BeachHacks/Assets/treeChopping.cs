@@ -22,6 +22,7 @@ public class treeChopping : MonoBehaviour
             if (counter == 5)
             {
                 Destroy(collision.gameObject);
+                treeText.text = "";
                 Instantiate(Log);
             }
         }
