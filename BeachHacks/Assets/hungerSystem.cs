@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class hungerSystem : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class hungerSystem : MonoBehaviour
         {
             textbox.text = "Hunger: " + hunger;
             health = 0;
+            SceneLoader(2);
         }
     }
     public void OnCollisionEnter(Collision collision)
@@ -53,6 +55,10 @@ public class hungerSystem : MonoBehaviour
                 hunger = 100;
             }
         }
+    }
+    public void SceneLoader(int SceneIndex)
+    {
+        SceneManager.LoadScene(SceneIndex);
     }
 }
 

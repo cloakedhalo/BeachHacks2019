@@ -16,6 +16,7 @@ public class spawnBridge : MonoBehaviour
     private void Update()
     {
         logCount = cutTree.LogCount;
+
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class spawnBridge : MonoBehaviour
             bridgeText.text = "Build bridge(F)(MUST HAVE 10 WOOD)";
             if (Input.GetKeyDown("f") && logCount >= 10)
             {
+                bridgeText.text = "";
                 gameObject.GetComponent<Renderer>().enabled = true;
                 logCount = 0;
                 bridgeText.text = "";
@@ -41,6 +43,7 @@ public class spawnBridge : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Object has exited");
+        bridgeText.text = "";
     }
 
 
