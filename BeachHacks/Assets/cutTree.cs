@@ -16,6 +16,7 @@ public class cutTree : MonoBehaviour
         {
             LogCount += 5;
             Debug.Log("Destroy tree now");
+            counter = 0;
             Destroy(this.gameObject);
             logText.text = "Wood= " + LogCount;
             chopText.text = "";
@@ -25,7 +26,7 @@ public class cutTree : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Object entered");
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && other.tag == "Player")
         {
             counter++;
             Debug.Log(counter);
@@ -33,7 +34,7 @@ public class cutTree : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && other.tag == "Player")
         {
             counter++;
             Debug.Log(counter);

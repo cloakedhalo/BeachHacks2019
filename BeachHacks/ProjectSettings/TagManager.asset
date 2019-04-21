@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tree
   - bridge
+  - food
   layers:
   - Default
   - TransparentFX
