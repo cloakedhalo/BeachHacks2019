@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class cutTree : MonoBehaviour
 {
+    public Text logText;
     public int counter;
+    public static int LogCount;
+
     private void Update()
     {
     if(counter >= 20)
         {
+            LogCount += 5;
             Debug.Log("Destroy tree now");
             Destroy(this.gameObject);
+            logText.text = "Wood= " + LogCount;
         }
     }
     void OnTriggerEnter(Collider other)

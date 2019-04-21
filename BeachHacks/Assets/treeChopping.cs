@@ -7,10 +7,11 @@ public class treeChopping : MonoBehaviour
 {
     public int counter;
     public Text treeText;
+    public GameObject Log;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Oak_Tree")
+        if(collision.gameObject.tag == "tree")
         {
             treeText.text = "PRESS E TO CHOP";
             if (Input.GetKeyDown("e"))
@@ -21,6 +22,7 @@ public class treeChopping : MonoBehaviour
             if (counter == 5)
             {
                 Destroy(collision.gameObject);
+                Instantiate(Log);
             }
         }
     }
