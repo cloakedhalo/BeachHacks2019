@@ -600,10 +600,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 0202378e-ca9b-4e20-bbd0-088cd8f913a9
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: BeachHacks
+  organizationId: unity_bs7jho3z6kusna
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
