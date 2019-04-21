@@ -30,6 +30,7 @@ public class spawnBridge : MonoBehaviour
             if (Input.GetKeyDown("f") && logCount >= 10)
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
+                logCount = 0;
             }
         }
     }
