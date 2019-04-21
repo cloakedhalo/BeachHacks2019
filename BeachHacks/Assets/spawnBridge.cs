@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class spawnBridge : MonoBehaviour
 {
     public static int logCount;
+    public Text bridgeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +29,12 @@ public class spawnBridge : MonoBehaviour
         Debug.Log("Object is in area");
         if(other.tag == "Player")
         {
+            bridgeText.text = "Build bridge(F)(MUST HAVE 10 WOOD)";
             if (Input.GetKeyDown("f") && logCount >= 10)
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
                 logCount = 0;
+                bridgeText.text = "";
             }
         }
     }
