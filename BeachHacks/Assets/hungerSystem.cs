@@ -14,11 +14,12 @@ public class hungerSystem : MonoBehaviour
 
     private void Start()
     {
-        textbox.text = "Hunger: " + 100;
+        textbox.text = "Hunger: " + hunger;
     }
     void Update()
     {
         currentTime = Time.time;
+        textbox.text = "Hunger: " + hunger;
 
         if (currentTime - lastHungerUpdateTime > 6f)
         {
@@ -31,6 +32,13 @@ public class hungerSystem : MonoBehaviour
         {
             textbox.text = "Hunger: " + hunger;
             //die
+        }
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name =="Coconut")
+        {
+            hunger += 10;
         }
     }
 }

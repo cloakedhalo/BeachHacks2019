@@ -190,11 +190,4 @@ public class SimpleCharacterControl : MonoBehaviour {
         }
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.name == "Coconut")
-        {
-            m_animator.SetTrigger("Pickup");
-        }
-    }
 }

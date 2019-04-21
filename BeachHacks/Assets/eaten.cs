@@ -8,6 +8,7 @@ public class eaten : MonoBehaviour {
         if(collision.gameObject.name == "Coconut")
         {
             Destroy(collision.gameObject);
+
         }
     }
 }
