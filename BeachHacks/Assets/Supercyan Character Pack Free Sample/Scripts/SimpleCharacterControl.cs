@@ -188,5 +188,6 @@ public class SimpleCharacterControl : MonoBehaviour {
         {
             m_animator.SetTrigger("Jump");
         }
+
     }
 }
